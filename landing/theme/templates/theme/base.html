@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 {% load static tailwind_tags %}
-<html lang="en">
+<html lang="en-us">
 	<head>
-    <title>Django Tailwind</title>
+        <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		{% tailwind_css %}
 	</head>
 
-	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
-		<div class="container mx-auto">
-			<section class="flex items-center justify-center h-screen">
-				<h1 class="text-5xl">Landing page = ❤️</h1>
-			</section>
-		</div>
+	<body>
+        <div id="content">
+          {% block content %}
+          {% endblock %}
+        </div>
 	</body>
+
 </html>
+
+
